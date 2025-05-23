@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Exile&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f2f6f9, rgb(247, 167, 178));
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 15px;
+  margin: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  font-family: 'Exile', cursive;
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: #333;
+}
+
+.by {
+  display: block;
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* Category Buttons */
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-buttons button {
+  padding: 8px 15px;
+  background: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.category-buttons button:hover {
+  background: #005fa3;
+}
+
+.category-buttons a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Search */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#searchInput {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 200px;
+  max-width: 100%;
+}
+
+#searchBtn {
+  padding: 8px 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#searchBtn i {
+  font-size: 1rem;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 20;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.side-menu-links a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+/* News Grid */
+#newsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+/* News Cards */
+.news-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 15px;
+}
+
+.news-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.news-content p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.news-content a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+/* Responsive Queries */
+@media (max-width: 768px) {
+  .category-buttons {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .search-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #searchInput {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 2rem;
+  }
+
+  .news-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .news-content p,
+  .news-content a {
+    font-size: 0.9rem;
+  }
+
+  #newsContainer {
+    padding: 15px;
+    gap: 15px;
+  }
+}
