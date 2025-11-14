@@ -1,4 +1,4 @@
-const API_KEY = "he2Ev4nEvwiR0pG6ul04B8GDqC3lXJzH";
+const NYT_API_KEY = API_KEYS.NYT;
 const BASE_URL = "https://api.nytimes.com/svc/topstories/v2";
 
 const newsContainer = document.getElementById("newsContainer");
@@ -41,7 +41,7 @@ searchBtn.addEventListener("click", () => {
 // Fetch top stories by NYT section
 async function fetchTopStories(section) {
   try {
-    const res = await fetch(`${BASE_URL}/${section}.json?api-key=${API_KEY}`);
+    const res = await fetch(`${BASE_URL}/${section}.json?api-key=${NYT_API_KEY}`);
     const data = await res.json();
     renderTopStories(data.results);
   } catch (error) {
@@ -53,7 +53,7 @@ async function fetchTopStories(section) {
 // Fetch search results using NYT article search API
 async function fetchSearchResults(query) {
   try {
-    const searchURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${API_KEY}`;
+    const searchURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${NYT_API_KEY}`;
     const res = await fetch(searchURL);
     const data = await res.json();
     renderSearchResults(data.response.docs);

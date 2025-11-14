@@ -28,10 +28,41 @@
         <input type="text" id="searchInput" placeholder="Search topic..." />
         <button id="searchBtn"><i class="fas fa-search"></i></button>
       </div>
+
+      <div class="mobile-menu-icon" id="mobileMenuIcon">
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
+
+    <!-- Mobile Side Menu -->
+    <div class="side-menu" id="sideMenu">
+      <button class="close-btn" id="closeMenu">&times; Cancel</button>
+      <div class="side-menu-links">
+        <a href="#" data-category="business">Business</a>
+        <a href="#" data-category="sports">Sports</a>
+        <a href="#" data-category="entertainment">Entertainment</a>
+        <a href="#" data-category="technology">Tech</a>
+        <a href="#" data-category="food">Food</a>
+        <a href="index2.html">Movie</a>
+      </div>
+    </div>
 
     <main id="newsContainer"></main>
 
+    <script src="./config.js"></script>
     <script src="./index.js"></script>
+    <script>
+      const menuIcon = document.getElementById('mobileMenuIcon');
+      const sideMenu = document.getElementById('sideMenu');
+      const closeBtn = document.getElementById('closeMenu');
+
+      menuIcon.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+      });
+    </script>
   </body>
 </html>

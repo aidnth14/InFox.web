@@ -1,11 +1,11 @@
-const apiKey = "27d90a0c";
+const OMDB_API_KEY = API_KEYS.OMDB;
 const movieContainer = document.getElementById("movie-container");
 const searchBtn = document.getElementById("searchBtn");
 const searchInput = document.getElementById("searchInput");
 
 document.addEventListener("DOMContentLoaded", () => {
   async function searchMovies(query) {
-    const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(query)}`);
+    const res = await fetch(`https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${encodeURIComponent(query)}`);
     const data = await res.json();
 
     if (data.Response === "True") {
